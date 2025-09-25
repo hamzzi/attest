@@ -1,0 +1,3 @@
+[submodule "src/toolkit"]
+	path = src/toolkit
+	url = git@github.com:hamzzi/toolkit.git
