@@ -64,6 +64,12 @@ inputs:
       The GitHub token used to make authenticated API requests.
     default: ${{ github.token }}
     required: false
+  sigstore:
+    description: >
+      Sigstore instance to use for signing. Must be one of "public-good", "github", or "self-hosted".
+      If not specified, will be automatically determined based on repository visibility.
+    default: ''
+    required: false
 outputs:
   bundle-path:
     description: 'The path to the file containing the attestation bundle.'

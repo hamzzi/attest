@@ -22,6 +22,7 @@ export type RunInputs = SubjectInputs &
   PredicateInputs & {
     pushToRegistry: boolean
     githubToken: string
+    sigstore: string
     showSummary: boolean
     privateSigning: boolean
   }
@@ -44,9 +45,11 @@ export async function run(inputs: RunInputs): Promise<void> {
   // Provenance visibility will be public ONLY if we can confirm that the
   // repository is public AND the undocumented "private-signing" arg is NOT set.
   // Otherwise, it will be private.
-  const sigstoreInstance: SigstoreInstance =
-    github.context.payload.repository?.visibility === 'public' &&
-    !inputs.privateSigning
+
+  const sigstoreInstance: SigstoreInstance = inputs.sigstore
+    ? (inputs.sigstore as SigstoreInstance)
+    : github.context.payload.repository?.visibility === 'public' &&
+      !inputs.privateSigning
       ? 'public-good'
       : 'github'
 
