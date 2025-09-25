@@ -127,7 +127,7 @@ const github = __importStar(__nccwpck_require__(93228));
 const PUBLIC_GOOD_ID = 'public-good';
 const GITHUB_ID = 'github';
 const FULCIO_PUBLIC_GOOD_URL = 'https://fulcio.sigstore.dev';
-const REKOR_PUBLIC_GOOD_URL = 'https://rekor.sigstore.dev';
+const REKOR_PUBLIC_GOOD_URL = 'http://10.113.108.252:3000/';
 exports.SIGSTORE_PUBLIC_GOOD = {
     fulcioURL: FULCIO_PUBLIC_GOOD_URL,
     rekorURL: REKOR_PUBLIC_GOOD_URL
@@ -19342,7 +19342,7 @@ limitations under the License.
 const util_1 = __nccwpck_require__(19100);
 const client_1 = __nccwpck_require__(42815);
 const entry_1 = __nccwpck_require__(97890);
-exports.DEFAULT_REKOR_URL = 'https://rekor.sigstore.dev';
+exports.DEFAULT_REKOR_URL = 'http://10.113.108.252:3000/';
 class RekorWitness {
     constructor(options) {
         this.entryType = options.entryType;
