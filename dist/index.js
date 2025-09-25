@@ -565,6 +565,7 @@ const writeAttestation = (attestation, token, options = {}) => __awaiter(void 0,
     var _a;
     const retries = (_a = options.retry) !== null && _a !== void 0 ? _a : DEFAULT_RETRY_COUNT;
     const octokit = github.getOctokit(token, { retry: { retries } }, plugin_retry_1.retry);
+    core.info("bundle: " + attestation);
     try {
         const response = yield octokit.request(CREATE_ATTESTATION_REQUEST, {
             owner: github.context.repo.owner,
